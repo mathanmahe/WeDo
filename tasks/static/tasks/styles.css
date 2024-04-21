@@ -1,0 +1,362 @@
+
+
+/* styles for right click menu */
+#context-menu
+{
+    position:fixed;
+    z-index: 10000;
+    width: 150px;
+    /* background-color: navy; */
+    text-align: center;
+    border-radius:5px;
+    /* display:none; */
+    background: #1b1a1a;
+    transform: scale(0);
+    transform-origin: top left;
+}
+
+#context-menu.visible{
+    /* display:block; */
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+
+#context-menu .item {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+#context-menu .item:hover {
+  background: #343434;
+}
+
+/* style for the dropdown list on the navbar */
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    /* color: black; */
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+  }
+  /* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* dropbtn special */
+  #addToFolder-button {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: rgba(89, 228, 233, 0.753);
+    cursor: pointer;
+    border-radius: inherit;
+  }
+  /* dropdown content special */
+  #addFolder-list {
+    background-color: #101010;
+  }
+  #addFolder-list a{
+  color: rgba(89, 228, 233, 0.753);
+  }
+  #addFolder-list a:hover {
+    background-color: #343434;
+  }
+
+/* calendar css */
+  .table {
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+  }
+  
+  .table tr, .table td {
+    border: 1px solid black;
+  }
+  
+  .table th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .table td {
+    width: 200px;
+    height: 150px;
+    padding: 20px 0px 0px 5px;
+  }
+  
+  .month {
+    font-size: 25px;
+  }
+  
+  .date {
+    font-size: 16px;
+  }
+  
+  ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+  }
+  
+  @media only screen and (max-width: 500px) {
+
+    /* Custom CSS declaration for mobile devices */
+    .table {
+      width: 70%;
+      margin: auto;
+      font-size: 10px;
+    }
+    
+    .table tr, .table td {
+      border: 1px solid black;
+    }
+    
+    .table th {
+      padding: 5px;
+      text-align: center;
+      font-size: 10px;
+    }
+    
+    .table td {
+      width: 50px;
+      height: 35px;
+      padding: 10px 0px 0px 5px;
+    }
+    
+    .month {
+      font-size: 15px;
+    }
+    
+    .date {
+      font-size: 10px;
+    }
+    #day-tasks
+    {
+      font-size:15px;
+      color: red;
+    }
+}
+
+  a {
+    color: #17a2b8;
+  }
+
+  #postDate
+  {
+    color: blue;
+  }
+
+  #dueDate
+  {
+    color: red;
+  }
+
+  /* #create-entry
+  {
+    max-width: 210px;
+    min-width: 100px;
+  } */
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    /* background-color: rgb(187, 28, 102); */
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav-menu{
+  list-style-type: none;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link{
+    font-size: 0.90rem;
+    font-weight: 500;
+    color: white;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4.25rem;
+        max-height: 700px;
+        flex-direction: column;
+        display: flex;
+        column-gap: 20px;
+        /* flex-wrap: wrap; */
+        /* background-color: #fff; */
+        background-color: slategrey;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .nav-link{
+      font-size:small;
+      font-weight: 500;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+.card {
+  
+  font-size: small;
+}
+@media only screen and (max-width: 350px) {
+  .card {
+    font-size: x-small;
+  }
+}
+
+@keyframes hide {
+  0% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0;
+      height: 0px;
+      line-height: 0px;
+      padding: 0px;
+      margin-bottom: 0px;
+  }
+}
+
+[id^= "task-div"] {
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    /* min-height: 40px; */
+}
+
+[id^= "body-div"]
+{
+  border: 1px solid  black;
+  border-radius: 5px;
+  background-color:lavender;
+  min-height: 40px;
+}
+
+[id^= "spacer-"]
+{
+  animation-name: hide;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+h2{
+  text-align: center;
+}
+
+.delete:hover
+{
+  background-color: rgb(228, 133, 133);
+}

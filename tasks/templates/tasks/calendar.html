@@ -1,0 +1,30 @@
+{% extends "tasks/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div id = "calendar-action">
+    <div class = "row">
+        <div class = "col-2">
+            <a class = "btn btn-light" id = "cal-previous-button" href="{% url 'calendar' %}?{{ previous_month }}">Previous</a>
+        </div>
+        <div class = "col-7"></div class = "col-2">
+        <div class ="col-2">
+            <a class = "btn btn-light" id = "cal-next-button" href="{% url 'calendar' %}?{{ next_month }}">Next</a>
+        </div>
+    </div>
+    
+    
+</div>
+<script>
+    document.querySelector("#cal-previous-button").href = `{% url 'calendar' %}?{{ previous_month }}&smallScreen=${smallScreen}`
+    document.querySelector("#cal-next-button").href = `{% url 'calendar' %}?{{ next_month }}&smallScreen=${smallScreen}`
+</script>
+<div id = "calendar-view" style="overflow-y: scroll; max-height:600px; overflow-x: hidden;">
+    {{calendar }}
+</div>
+<div id = "tasks-in-day">
+        
+</div>
+
+
+{% endblock %}

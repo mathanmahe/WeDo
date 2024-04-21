@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <title>{% block title %} WeDo {% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'tasks/styles.css' %}" rel="stylesheet">
+        <!-- <link href="https://path/to/font-awesome/css/font-awesome.min.css" rel="stylesheet" > -->
+        
+
+    </head>
+    <body>
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+            <nav class="navbar navbar-dark bg-dark">
+            
+            <a class="navbar-brand" href="#">
+                <img src="/media/images/wedo_logo.png" style = "width:100px; height:auto">
+                <!-- WeDo -->
+            </a>
+          
+            <!-- <div> -->
+              <!-- <ul class="navbar-nav mr-auto"> -->
+                <ul class="nav-menu" id = "nav-menu">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}" id="username"><strong>{{ user.username }}</strong></a>
+                    </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class = "nav-item">
+                        <div class = "dropdown">
+                            <button class = "dropbtn" id = "folder-button">Folders</button>
+                            <i class="fa fa-caret-down" style="color: white;"></i>
+                            <div class = "dropdown-content" id = "folder-list">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id = "create-folder">New Folder +</a>
+                    </li>
+                    <script>
+                        function getWidth(){
+                            console.log(window.innerWidth);
+                            return window.innerWidth;
+                        }
+                        let smallScreen = (getWidth()<500) ?true:false;
+                        if(document.querySelector("#calendar-button")!=null) {
+                            document.querySelector("#calendar-button").href =
+                             `{% url 'calendar' %}?smallScreen=${smallScreen}`;
+                        }
+                    </script>
+                    <li class="nav-item">
+                        <a class="nav-link" id = "calendar-button" href="#" >Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                    <script>
+
+                        console.log(smallScreen);
+                        document.querySelector("#calendar-button").href = `{% url 'calendar' %}?smallScreen=${smallScreen}`
+                    </script>
+
+
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" id="login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %}
+              </ul>
+            <!-- </div> -->
+            <div class = "hamburger">
+                <span class = "bar"></span>
+                <span class = "bar"></span>
+                <span class = "bar"></span>
+                <!-- <span class = "bar"></span> -->
+            </div>
+          </nav>
+
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+    </body>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLink = document.querySelectorAll(".nav-link");
+    </script>
+{% block script %}
+    <script src="{% static 'tasks/front.js' %}"></script>
+{% endblock %}
+</html>

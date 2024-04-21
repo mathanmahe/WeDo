@@ -1,0 +1,74 @@
+{% extends "tasks/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <h2 id = "task-title">All Tasks</h2><br>
+
+    <div id = "create-task">
+        <form id = "create-task-form" action = "{% url 'createTask' %}" method = "post">
+            <a id = "csrf">{% csrf_token %}</a>
+            <div class = "form-group row">
+                <div class = "col-1"></div>
+                <div class = "col-6 col-sm-7 col-lg-6">
+                    <input id = "create-entry" class = "form-control" name ="body" type="text" placeholder="Any task is due on 10/12/21">
+                </div>
+                
+                <input name = "folder" type = "hidden" id="folder-input">
+                <div class = "col">
+                    <!-- <button type ="submit" class = "btn btn-primary">Submit</button> -->
+                    <button type ="submit" class = "btn btn-dark" style="background-color:rgba(0, 0, 255, 0.671)"><i class="fa fa-plus"></i></button>
+                </div>             
+            </div>
+        </form>
+    </div>
+
+
+    
+    <div id = "view-task" style="overflow-y: scroll; max-height:400px; overflow-x: hidden;">
+    </div>
+    
+    <div id = "delete-folder-div" style ="display:none;" >
+        <div class = "text-center">
+            <a class = "btn btn-primary" id = "delete-folder-button"><i class="fa fa-trash" style= "color:white;"> Delete Folder</i></a>
+        </div>
+        
+    </div>
+
+    <div class = "card bg-dark text-white fixed-bottom h-1">
+        <!-- id = "motivational-quote" -->
+        <!-- <div class = "card-header">A Great Person Once Said</div> -->
+        <div  class ="card-body">
+            <!-- <blockquote class="blockquote mb-3"> -->
+                <p id = "motivational-quote" class="card-text"></p>
+                <footer id ="quoter" class="blockquote-footer text-left" style="color: white;"></footer>
+
+            <!-- </blockquote> -->
+            
+        </div>
+    </div>
+
+
+    <div id  = "context-menu">
+        <div class = "item"><a href = "#" id = "edit-button">Edit Task</a></div>
+        <div class = "item"><a href = "#" id = "info-button">Info</a></div>
+        <div class = "item">
+            <div class = "dropdown">
+                <a href = "#" id = "addToFolder-button" class = "dropbtn">
+                    Add to Folder
+                </a>
+                <i class="fa fa-caret-right" style="color: white;"></i>
+                <div class = "dropdown-content" id = "addFolder-list">
+    
+                </div>
+            </div>
+            
+        </div>
+        <div class = "item"><a href = "#" id = "delete-button">Delete</a></div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'tasks/front.js' %}"></script>
+{% endblock %}
