@@ -1,5 +1,5 @@
 # WeDo 
-Task Manager Application that goes the extra mile.
+WeDo task manager web application made using Python and Javascript
 
 # Description 
 WeDo is a unique productivity manager than can help keep track of your tasks.
@@ -67,3 +67,4 @@ It is a complex project as it delves deep into both the back end and the front e
 On the front end it features an intuitive user interface along with special features like a customized right click to improve user experience. There are API calls being made for every small change made on the website and it is all updated into the database in real time.
 
 Ultimately WeDo is a production ready application that draws well from the concepts taught in CS50W and goes beyond to explore additional features.
+
