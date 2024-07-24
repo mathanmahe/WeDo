@@ -4,6 +4,7 @@ Django==5.0.7
 django-on-heroku==1.1.2
 gunicorn==22.0.0
 packaging==24.1
+psycopg2==2.9.9
 psycopg2-binary==2.9.9
 python-dateutil==2.9.0.post0
 pytz==2024.1
