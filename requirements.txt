@@ -56,10 +56,10 @@ diskcache==5.6.3
 distro==1.8.0
 dj-database-url==2.2.0
 Django==3.2.8
+django-on-heroku==1.1.2
 docopt==0.6.2
 docutils==0.20.1
 eva-decord==0.6.1
--e git+https://github.com/georgia-tech-db/evadb.git@20c5cb6f4e56f7c37593510c84c29f7a970e7235#egg=evadb
 exceptiongroup==1.2.0
 executing==2.0.1
 facenet-pytorch==2.5.3
@@ -464,6 +464,7 @@ webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.6.4
 Werkzeug==2.0.3
+whitenoise==6.7.0
 widgetsnbextension==4.0.9
 wrapt==1.13.3
 xgboost==2.0.2
